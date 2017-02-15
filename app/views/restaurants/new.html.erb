@@ -1,0 +1,8 @@
+<%= simple_form_for(@restaurant) do |f| %>
+<%= f.input :name  %>
+<%= f.input :address  %>
+<%= f.input :phone_number  %>
+<%= f.select :category, options_for_select(["chinese", "italian", "japanese", "french", "belgian"])%>
+<%= f.submit %>
+<% end %>
+<%= link_to 'Back to HomePage', restaurants_path %>
