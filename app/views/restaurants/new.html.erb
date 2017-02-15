@@ -1,8 +1,9 @@
+<h1 style="text-align: center">Créer votre restaurant</h1>
 <%= simple_form_for(@restaurant) do |f| %>
 <%= f.input :name  %>
 <%= f.input :address  %>
 <%= f.input :phone_number  %>
-<%= f.select :category, options_for_select(["chinese", "italian", "japanese", "french", "belgian"])%>
-<%= f.submit %>
+<%= f.input :category, collection:["chinese", "italian", "japanese", "french", "belgian"], as: :radio_buttons%>
+<%= f.submit class: 'btn btn-primary' %>
 <% end %>
-<%= link_to 'Back to HomePage', restaurants_path %>
+<%= link_to 'Back to HomePage', restaurants_path, class: 'btn btn-primary' %>

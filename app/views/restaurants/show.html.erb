@@ -3,11 +3,11 @@
 <p>Address : <%= @restaurant.address %></p>
 <p>Phone : <%= @restaurant.phone_number %></p>
 <p>Category : <%= @restaurant.category %></p>
-<%= link_to 'Add review', new_restaurant_review_path(@restaurant) %>
-<h2> Reviews</h2>
-<ul>
+ <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
+<div class="reviews">
 <% @restaurant.reviews.each do |review| %>
-<li><p> Content : <%= review.content %></p></li>
-<ol><p> Rating : <%= "*" * review.rating %></p></ol>
+<p> Content : <%= review.content %></p>
+<p> Rating : <%= "*" * review.rating %></p>
 <% end %>
-</ul>
+</div>
+
